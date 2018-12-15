@@ -17,27 +17,265 @@ body {
     line-height: 1.6;
 }
 
+img {
+    width: 100%;
+}
 
-/* HLAVICKA */
-
-.titulek {
+h2 {
+    padding-left: 40px;
+    padding-bottom: 15px;
+    position: relative;
     font-family: 'Raleway', serif;
 }
 
+h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 20%;
+    left: 0;
+    border-bottom: 5px solid rgb(91, 159, 220);
+}
+
+p {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.popisek {
+    color: rgb(169, 169, 169);
+    text-align: center;
+    font-family: 'Raleway', serif;
+}
+
+.popisek a {
+    color: rgb(169, 169, 169);
+}
+
+/* HLAVICKA */
+
+.hlavicka {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("images/island-hlavicka.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    min-height: 400px;
+}
+
+.titulek {
+    font-family: 'Raleway', serif;
+    font-size: 52px;
+    margin: 0;
+}
+
+.autor {
+    font-style: italic;
+}
 
 /* MENU */
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway', serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+    padding: 20px 40px 0;
+    margin: 0;
+}
 
+.menu a {
+    text-decoration: none;
+    color: rgb(169, 169, 169);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
+.menu a:hover {
+    color: white;
+    background-color: rgb(169, 169, 169);
+}
+
+.menu li {
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 0.5px rgb(169, 169, 169);
+    text-align: center;
+    width: 100%;
+}
+
+.uvod  {
+    padding-top: 20px;
+}
 
 /* OBSAH */
 
-
-
+.obsah  {
+    background-color: white;
+    box-shadow: 0px 0px 42px 0px rgba(0,0,0,1);
+}
 
 /* FOTOGALERIE */
 
+.galerie {
+    display: flex;
+    flex-direction: column;
+}
 
+.foto {
+    width: 100%;
+}
+
+.foto .popisek {
+    font-weight: 700;
+}
+
+.foto .popisek-copy {
+    font-weight: 400;
+}
 
 
 /* PATICKA */
+.paticka {
+    color: rgb(169, 169, 169);
+    padding-left: 25px;
+    padding-top: 35px;
+}
+
+.paticka a {
+    color: rgb(169, 169, 169);
+}
+
+/* TABLET */
+@media (min-width: 500px) {
+
+h2::after {
+    width: 10%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu li {
+    width: 25%;
+    border: solid 0.5px rgb(169, 169, 169);
+    border-left: none;
+}
+
+.menu li:last-child {
+    border-right: 0; 
+}
+
+.galerie {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.foto {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.foto img {
+	width: 100%;
+	display: block;
+	transition: all 0.3s;
+}
+
+.foto .popisek {
+    position: absolute;
+	left: 0;
+	bottom: -15px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	text-align: center;
+	color: white;
+
+	transition: all 0.3s;
+	transform: translateY(100%);
+}
+
+.foto:hover .popisek {
+	transform: translateY(0);
+}
+
+.foto:hover img {
+	transform: scale(1.4);
+}
+
+}
+
+/* DESKTOP*/
+@media (min-width: 1000px) {
+
+.obsah  {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -40px;
+}
+
+.menu  {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    padding-left: 30px;
+}
+
+.menu li {
+    width: 100%;
+    border: none;
+    border-bottom: solid 0.5px rgb(169, 169, 169);
+    text-align: left;
+}
+
+.menu a {
+    padding: 10px 25px 10px 0;
+}
+
+.perex {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.uvod p  {
+    padding-left: 260px;
+}
+
+.proc  {
+    padding-right: 260px;
+}
+
+.co  {
+    padding-left: 260px;
+}
+
+.co h2::after {
+    left: 40px;
+}
+
+.foto {
+    width: calc(100%/3);
+    height: 75%;
+}
+
+.paticka {
+    padding-left: 17%;
+}
+
+
+}
